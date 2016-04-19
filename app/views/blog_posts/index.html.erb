@@ -8,7 +8,10 @@
             <div class="card-content white-text">
               <span class="card-title"><%=blog_post.title%></span>
               <i>by <%=blog_post.author%></i>
-              <p><%= blog_post.blog_entry %></p>
+              <p>
+                <%= blog_post.blog_entry[0..250] %>...
+                [<%=link_to "Read More", blog_post%>]
+              </p>
             </div>
             <div class="card-action">
               <%= link_to 'Show', blog_post %>
