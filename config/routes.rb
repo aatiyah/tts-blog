@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   devise_for :users
   
+  get 'index' => 'welcome#index'
   get "user_posts/:id" => "blog_posts#user_posts", as: :user_posts
   get "blog_posts" => "blog_posts#index", as: :blog_posts
 
