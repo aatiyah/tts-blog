@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get "your_posts" => "blog_posts#your_posts"
   end
 
- get "blog_posts/:id" => "blog_posts#show", as: :blog_post
+ get "blog_post/:id" => "blog_posts#show", as: :blog_post
 
 
 

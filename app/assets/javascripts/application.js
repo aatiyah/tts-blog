@@ -26,7 +26,6 @@ $(document).ready(function(){
 	// Hide sideNav
 	$('.button-collapse').sideNav('hide');
 
-	$('.parallax').parallax();
 
 });
 // Initialize collapse button
