@@ -1,39 +1,42 @@
-<h1>Welcome to TTS Blog</h1>
-<p>
-	Lorem ipsum dolor sit amet, ne mei timeam oblique. Per cu aeque ignota possit, ut sea viris definiebas. Natum harum laudem cu eos, admodum apeirian per ne, utinam adipisci no mel. Ex mollis commune consulatu usu, nec ut utamur aperiam expetenda. Putent persius ne duo, possim volumus pro ad.
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center yellow-text text-lighten-2">Welcome to myBlog</h1>
+      <div class="row center">
+        <h5 class="header white-text col s12 light">This App was built using Ruby on Rails and customized with Materialize.</h5>
+      </div>
+      <div class="row center">
+        <a href="blog_posts" id="download-button" class="btn-large waves-effect waves-light yellow lighten-1">Get Started</a>
+      </div>
+      <br><br>
 
-	Sed at quem animal, nec ex brute consetetur, ei ius velit eruditi. Has eu graece democritum, illud maiestatis temporibus in has. Sint placerat mnesarchum mea id, dicta graecis legendos mei id, doctus verterem definitiones id mel. Eu qui nullam apeirian. Ius enim adhuc petentium in.
-</p>
-
-<p>
-	Nec postea nostrum luptatum cu, novum latine erroribus sit ad, putant admodum volutpat ex has. Bonorum definiebas interpretaris vix ut, oblique similique ne eum. Adhuc ignota omnesque eam et. Legimus appareat deseruisse mei cu, vis ad summo dictas vivendum.
-
-	Pri partem iriure appareat in, duo an tantas fierent. Possim omnesque consequuntur an ius. Et est nisl oportere, ignota omnium disputando per at, vitae veniam menandri vix in. Nec at ipsum mazim, id iusto posidonium vix. Ea pri harum tacimates vituperatoribus.
-
-</p>
-
-<div>
-	<% @recent_posts.each do |recent_post| %>
-		<div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title"><%=recent_post.title%></span>
-              <i>by <%=recent_post.author%></i>
-              <p>
-                <%= recent_post.blog_entry[0..250] %>...
-                [<%=link_to "Read More", recent_post%>]
-              </p>
-            </div>
-          </div>
-        </div>
-	<% end %>
+    </div>
+  </div>
+  <div class="parallax"><%= image_tag ("background1.jpg")%></div>
 </div>
 
-
-<div class = "recent">
-	<% @recent_posts.each do |recent_post| %>
-		<ul>
-			<li><%=recent_post.title%></li>
-		</ul>
-	<% end %>
+<div class="container">
+  <div class="section">
+    <div class="row center">
+      <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <h4>myBlog Posts</h4>
+        <% @recent_posts.each do |recent_post| %>
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"><%=recent_post.title%></span>
+                <i>by <%=recent_post.author%></i>
+                <p>
+                  <%= recent_post.blog_entry[0..250] %>...
+                  [<%=link_to "Read More", recent_post%>]
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

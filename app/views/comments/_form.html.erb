@@ -1,27 +1,27 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+  <%= form_for(@comment) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+        <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      </div>
+    <div class="field">
+      <b><%= f.label :comment_entry %></b><br>
+      <%= f.text_area :comment_entry %>
+    </div>
+      <%= f.hidden_field :blog_post_id, value: @blog_post.id %><br>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <%= f.hidden_field :blog_post_id, value: @blog_post.id %>
-
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :comment_entry %><br>
-    <%= f.text_area :comment_entry %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

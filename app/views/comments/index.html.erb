@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Related Blog ID</th>
       <th>Author</th>
       <th>Comment entry</th>
       <th colspan="3"></th>
@@ -14,7 +15,8 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.author %></td>
+        <td><%= comment.blog_post_id %></td>
+        <td><%= comment.user.username %></td>
         <td><%= comment.comment_entry %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>

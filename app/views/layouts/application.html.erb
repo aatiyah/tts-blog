@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TtsBlog</title>
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>My Blog</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
 </head>
+
+
+
 <body>
+  <nav>
+    <div class="nav-wrapper">
+      <a id="logo-container" href="../index" class="brand-logo">myBlog</a>
+      <ul class="right hide-on-med-and-down">
+        <%= render 'nav'%>
+      </ul>
 
-<%= yield %>
+      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+        <%= render 'nav'%>
+      </ul>
+      <a href="http://localhost:3000/index" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
+
+
+  <%= yield %>
+
+    <script>
+    $( document ).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">My Bio</h5>
+          <p class="grey-text text-lighten-4">Junior Web Developer. Enrolled in a Coding Bootcamp that covers the fundamentals of web development and programming. Languages learned: Ruby on Rails, HTML, CSS, JavaScript, jQuery, Deployment, Domain Modeling, APIs, Databases, Materialize, Model Associations, Git, GitHub, and Ruby Gems.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">LinkedIn</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.linkedin.com/in/ahmadatiyah" target="_blank">AhmadAtiyah</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">GitHub</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/aatiyah" target="_blank">GitHub: aatiyah</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by: <a class="yellow-text text-lighten-3" href="https://twitter.com/ahmad_atiyah" target="_blank">Ahmad Atiyah - Twitter: @ahmad_atiyah</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
+
+
 
 

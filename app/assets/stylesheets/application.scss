@@ -19,9 +19,81 @@ $primary-color: color("blue", "lighten-2") !default;
  *= require_self
  */
 
-body {
-	padding: 0 10px 0 10px;
+/*#or I can do only: padding: 0 10px; because it's the same.*/
 
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  background: white;
 }
 
-/*#or I can do only: padding: 0 10px; because it's the same.*/
+nav {
+  background: gray;
+}
+
+.waves-effect.waves-gray .waves-ripple {
+  background-color: rgba(121, 85, 72, 0.65);
+  }
+
+.wrapper {
+  height: 100%;
+  transition: all 300ms ease-in-out;  
+  margin: 1em 0;
+  padding: 0;
+}
+
+.nav-wrapper {
+  background-color: gray;
+}
+
+.background--blur {
+  background: #004d40;
+}
+
+footer.page-footer {
+  background-color: gray;
+}
+
+.menu {
+  font-size:2em;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.menu div {
+  margin: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #3367d6;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu div:last-child {
+  border: 0;
+}
+
+.menu--off {
+  position: absolute;
+  left: -50%;
+  width: 50%;
+  display: block;
+  background: #eee;
+  min-height: 600px;
+  height: 125%;
+  margin-top: 1em;
+  transition: all 300ms;
+}
+
+.menu--on {
+  left: 0;
+  box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: all 300ms;
+}
+
