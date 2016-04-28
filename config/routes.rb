@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   
   get 'index' => 'welcome#index'
   get "user_posts/:id" => "blog_posts#user_posts", as: :user_posts
-  get "blog_posts" => "blog_posts#index", as: :blog_posts
+
+  resources :blog_posts, only: [:index, :show]
 
   authenticate :user do
     resources :comments
-    resources :blog_posts
+    resources :blog_posts, only: [:new, :create, :edit, :update, :destroy]
     get "your_posts" => "blog_posts#your_posts"
   end
-
- get "blog_post/:id" => "blog_posts#show", as: :blog_post
 
 
 
