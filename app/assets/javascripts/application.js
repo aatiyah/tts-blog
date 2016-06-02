@@ -17,15 +17,4 @@
 
 //= require jquery
 //= require materialize-sprockets
-$(document).ready(function(){
-    
-    $('.parallax').parallax();
-// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-//$('.collapsible').collapsible();
-
-	$('.button-collapse').sideNav();
-	// Hide sideNav
-	$('.button-collapse').sideNav('hide');
-
-});
 // Initialize collapse button
